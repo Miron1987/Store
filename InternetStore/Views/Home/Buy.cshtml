@@ -1,0 +1,41 @@
+﻿@model InternetStore.Models.Purchase
+@{
+    ViewBag.Title = "Buy";
+}
+
+
+
+
+@{
+    ViewBag.Title = "Покупка";
+}
+
+@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Покупка</title>
+    </head>*@
+@*<body>*@
+<div>
+    <h3>Форма оформления покупки</h3>
+    @using (Html.BeginForm("Buy", "Home", FormMethod.Post))
+    {
+        @*<input type="hidden" value="@ViewBag.BookId" name="BookId" />*@
+        @Html.HiddenFor(m => m.PurchaseId)
+        <table>
+            <tr>
+                <td><p>@Html.LabelFor(m => m.Person, "Введите имя:")</p></td>
+                <td>@Html.TextBoxFor(m => m.Person)</td>
+            </tr>
+            <tr>
+                <td><p>@Html.Label("Address", "Введите адрес:")</p></td>
+                <td>@Html.TextBox("Address", "Введите адрес")</td>
+            </tr>
+            <tr><td><input type="submit" value="Отправить" /></td></tr>
+        </table>
+    }
+</div>
+@*</body>*@
+@*</html>*@
+
